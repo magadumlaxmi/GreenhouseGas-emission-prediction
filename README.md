@@ -1,62 +1,108 @@
+
 # 🌱 Greenhouse Gas Emission Prediction API
 
-This project is built as part of the Shell Edunet Internship Program to predict Greenhouse Gas (GHG) Emission Factors using machine learning.
+This project predicts greenhouse gas (GHG) emission factors using a machine learning model deployed as a Flask web API.
 
-## 📌 Project Structure
+## 📌 Project Overview
 
-```
-Greenhouse-Gas-Emission-Prediction/
-├── app.py                          # Flask API to serve predictions
-├── GHG_Emissions_Prediction.ipynb # Jupyter notebook for training
-├── models/                         # Saved ML model & encoders
-│   ├── ghg_model.pkl
-│   ├── industry_encoder.pkl
-│   └── substance_encoder.pkl
-├── SupplyChainEmissionFactors.xlsx # Dataset
-├── requirements.txt                # Python dependencies
-└── README.md
-```
+This project was developed as part of the Shell Edunet Internship program. It uses industry and substance data with quality indicators to predict the emission factor using a trained regression model.
 
-## 🚀 How to Run
+## 🚀 Live Demo
 
-1. Clone or download this repository.
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
+🌐 **API Endpoint:**  
+[https://greenhousegas-emission-prediction.onrender.com/predict](https://greenhousegas-emission-prediction.onrender.com/predict)
 
-3. Run the Flask API:
-   ```
-   python app.py
-   ```
-
-4. Test using Postman or curl:
-   - POST to: `http://127.0.0.1:5000/predict`
-   - Example JSON body:
-     ```json
-     {
-       "Industry Code": "111CA",
-       "Industry Name": "111CA",
-       "Substance": "carbon dioxide",
-       "DQ_Reliability": 4,
-       "DQ_Temporal": 2,
-       "DQ_Geographical": 1,
-       "DQ_Technological": 4,
-       "DQ_DataCollection": 1
-     }
-     ```
-
-## 🧠 Model
-
-A linear regression model trained on industry-level emission factor data (2016) to estimate supply chain GHG emission factors based on:
-- Industry and substance
-- Data quality metrics
-
-## ✨ Output
-
-Returns a predicted GHG emission factor in JSON.
+Use tools like Postman or the provided HTML form to test it.
 
 ---
 
-**Project by:** Laxmi Magadum  
-**Internship Program:** Shell Edunet + AICTE  
+## 🛠 Tools and Technologies Used
+
+- **Language:** Python
+- **Libraries:** pandas, numpy, scikit-learn, joblib, openpyxl
+- **Web Framework:** Flask + flask-cors
+- **Deployment:** Render (Free Cloud Hosting)
+- **API Testing:** Postman
+
+---
+
+## 🔧 How to Run Locally
+
+### 1. Clone the repository:
+```bash
+git clone https://github.com/magadumlaxmi/GreenhouseGas-emission-prediction.git
+cd GreenhouseGas-emission-prediction
+```
+
+### 2. Create virtual environment (optional but recommended):
+```bash
+python -m venv venv
+source venv/bin/activate  # or venv\Scripts\activate on Windows
+```
+
+### 3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Run the Flask app:
+```bash
+python app.py
+```
+
+---
+
+## 📬 API Usage
+
+### Endpoint:
+```
+POST /predict
+```
+
+### Request Body:
+```json
+{
+  "Industry Code": "111CA",
+  "Industry Name": "111CA",
+  "Substance": "carbon dioxide",
+  "DQ_Reliability": 4,
+  "DQ_Temporal": 2,
+  "DQ_Geographical": 1,
+  "DQ_Technological": 4,
+  "DQ_DataCollection": 1
+}
+```
+
+### Response:
+```json
+{
+  "predicted_emission_factor": 0.507
+}
+```
+
+---
+
+## 💡 Features
+
+- CORS enabled for browser-based interaction
+- Trained Linear Regression model
+- Real-time predictions
+- Deployed and publicly accessible API
+- HTML test form included
+
+---
+
+## 🖼 Screenshot Suggestions for Slide 8
+
+- ✅ Render dashboard showing "Service is live"
+- ✅ Postman request and response to `/predict`
+- ✅ HTML form showing prediction output
+
+---
+
+## 👤 Author
+
+**Laxmi Magadum**  
+Final-year CSBS student  
+Shell Edunet Intern – 2025
+
