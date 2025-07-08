@@ -92,11 +92,15 @@ POST /predict
 
 ---
 
-## 🖼 Screenshot Suggestions for Slide 8
+## 🖼 Screenshot 
+### 🔹 Render Live Deployment
+![Render Deployment](screenshots/render_live_dashboard.png)
 
-- ✅ Render dashboard showing "Service is live"
-- ✅ Postman request and response to `/predict`
-- ✅ HTML form showing prediction output
+### 🔹 Postman Prediction Output
+![Postman](screenshots/postman_prediction.png)
+
+### 🔹 Browser Form Prediction
+![HTML Form Output](screenshots/html_form_output.png)
 
 ---
 
