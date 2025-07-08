@@ -1,5 +1,6 @@
 
 from flask import Flask, request, jsonify
+from flask_cors import CORS  
 import joblib
 import numpy as np
 import os
@@ -10,6 +11,7 @@ le_industry = joblib.load("models/industry_encoder.pkl")
 le_substance = joblib.load("models/substance_encoder.pkl")
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/predict", methods=["POST"])
 def predict():
